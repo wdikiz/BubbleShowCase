@@ -1,4 +1,5 @@
-package com.elconfidencial.bubbleshowcase
+package com.wdikiz.bubbleshowcase
+
 
 
 import android.app.Activity
@@ -10,11 +11,11 @@ import android.graphics.RectF
 import android.graphics.drawable.Drawable
 import android.os.Build
 import android.os.Handler
-import android.support.v4.content.ContextCompat
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.RelativeLayout
+import androidx.core.content.ContextCompat
 import java.lang.ref.WeakReference
 
 
@@ -64,7 +65,7 @@ class BubbleShowCase(builder: BubbleShowCaseBuilder){
     private val mShowOnce: String? = builder.mShowOnce
     private val mDisableTargetClick: Boolean = builder.mDisableTargetClick
     private val mDisableCloseAction: Boolean = builder.mDisableCloseAction
-    private val mHighlightMode: BubbleShowCase.HighlightMode? = builder.mHighlightMode
+    private val mHighlightMode: HighlightMode? = builder.mHighlightMode
     private val mArrowPositionList: MutableList<ArrowPosition> = builder.mArrowPositionList
     private val mTargetView: WeakReference<View>? = builder.mTargetView
     private val mBubbleShowCaseListener: BubbleShowCaseListener?  = builder.mBubbleShowCaseListener
@@ -342,6 +343,8 @@ class BubbleShowCase(builder: BubbleShowCaseBuilder){
             System.currentTimeMillis().toInt() / 1000
         }
     }
+
+
 
     private fun takeScreenshot(targetView: View, highlightMode: HighlightMode?): Bitmap? {
         if (highlightMode==null || highlightMode == HighlightMode.VIEW_LAYOUT)

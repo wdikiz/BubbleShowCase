@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout  xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/showCaseMessageViewLayout"
     android:layout_width="match_parent"
+    android:background="@drawable/rounded_background"
     android:layout_height="wrap_content"
-    android:paddingBottom="36dp"
+    android:paddingBottom="6dp"
     android:paddingLeft="36dp"
     android:paddingRight="20dp"
     android:paddingTop="20dp"
@@ -15,12 +16,9 @@
         android:id="@+id/imageViewShowCase"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="0dp"
-        android:visibility="gone"
         android:layout_marginTop="16dp"
+        android:visibility="gone"
         android:src="@drawable/rounded_rectangle"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -43,7 +41,7 @@
             android:text="Title"
             android:breakStrategy="simple"
             android:textColor="@color/white"
-            android:visibility="gone"
+android:visibility="gone"
             android:textSize="16sp"
             android:textStyle="bold" />
 
@@ -53,12 +51,36 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
             android:breakStrategy="simple"
-            android:visibility="gone"
             android:textColor="@color/white"
             android:textSize="14sp" />
 
+
+
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/linearLayoutDismissButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+
+        android:layout_marginBottom="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutTexts">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/dismissMaterialButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#3CA7FB"
+            android:text="@string/dismiss"
+            android:textColor="@color/white"
+            app:cornerRadius="4dp" />
+    </LinearLayout>
 
     <ImageView
         android:id="@+id/imageViewShowCaseClose"
@@ -70,4 +92,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-</android.support.constraint.ConstraintLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

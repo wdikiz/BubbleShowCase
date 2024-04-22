@@ -1,10 +1,10 @@
-package com.elconfidencial.bubbleshowcase
+package com.wdikiz.bubbleshowcase
 
 import android.app.Activity
 import android.graphics.drawable.Drawable
-import android.support.v4.content.ContextCompat
 import android.view.View
 import android.view.ViewTreeObserver
+import androidx.core.content.ContextCompat
 import java.lang.ref.WeakReference
 import java.util.ArrayList
 
@@ -72,7 +72,7 @@ class BubbleShowCaseBuilder{
      *  - If this param is not passed, the BubbleShowCase will not have main image
      */
     fun imageResourceId(resId: Int): BubbleShowCaseBuilder {
-        mImage = ContextCompat.getDrawable(mActivity!!.get(), resId)
+        mImage = mActivity!!.get()?.let { ContextCompat.getDrawable(it, resId) }
         return this
     }
 
@@ -90,7 +90,7 @@ class BubbleShowCaseBuilder{
      *  - If this param is not defined, a default close icon is displayed
      */
     fun closeActionImageResourceId(resId: Int): BubbleShowCaseBuilder {
-        mCloseAction = ContextCompat.getDrawable(mActivity!!.get(), resId)
+        mCloseAction = mActivity!!.get()?.let { ContextCompat.getDrawable(it, resId) }
         return this
     }
 
@@ -109,7 +109,7 @@ class BubbleShowCaseBuilder{
      *  - #3F51B5 color will be set if this param is not defined
      */
     fun backgroundColorResourceId(colorResId: Int): BubbleShowCaseBuilder {
-        mBackgroundColor = ContextCompat.getColor(mActivity!!.get(), colorResId)
+        mBackgroundColor = mActivity!!.get()?.let { ContextCompat.getColor(it, colorResId) }
         return this
     }
 
@@ -127,7 +127,7 @@ class BubbleShowCaseBuilder{
      *  - White color will be set if this param is not defined
      */
     fun textColorResourceId(colorResId: Int): BubbleShowCaseBuilder {
-        mTextColor = ContextCompat.getColor(mActivity!!.get(), colorResId)
+        mTextColor = mActivity!!.get()?.let { ContextCompat.getColor(it, colorResId) }
         return this
     }
 

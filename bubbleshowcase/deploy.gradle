@@ -1,13 +1,12 @@
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 apply from: 'keystore.gradle'
-
 //This file was created following instructions from: https://notes.devlabs.bg/beginners-guide-for-publishing-a-kotlin-library-to-jcenter-41272bfc214
 
 ext{
-    groupId = 'com.elconfidencial.bubbleshowcase'
-    artifactId = 'bubbleshowcase'
-    libraryVersion = '1.3.1'
+    groupId = 'com.github.wdikiz'
+    artifactId = 'BubbleShowCase'
+    version = '1.2'
 }
 
 version = libraryVersion

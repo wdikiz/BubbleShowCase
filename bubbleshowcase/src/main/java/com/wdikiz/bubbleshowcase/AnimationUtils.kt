@@ -1,4 +1,4 @@
-package com.elconfidencial.bubbleshowcase
+package com.wdikiz.bubbleshowcase
 
 import android.animation.ObjectAnimator
 import android.animation.PropertyValuesHolder

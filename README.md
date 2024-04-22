@@ -58,7 +58,7 @@ BubbleShowCaseBuilder(this) //Activity instance
                     }
                 })
                 .targetView(view) //View to point out
-                .show() //Display the ShowCase
+                .show()) //Display the ShowCase
 ```
 
 **NOTE:** Set more than one arrow position is allowed. For that case, the arrows will be painted and the bubble will be located in the middle of the screen. It could be useful to indicate a swipe or a scroll movement.

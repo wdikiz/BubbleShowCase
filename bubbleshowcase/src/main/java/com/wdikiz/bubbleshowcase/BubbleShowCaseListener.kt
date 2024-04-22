@@ -1,4 +1,4 @@
-package com.elconfidencial.bubbleshowcase
+package com.wdikiz.bubbleshowcase
 
 /**
  * Created by jcampos on 04/09/2018.
@@ -15,6 +15,10 @@ interface BubbleShowCaseListener {
      * It is called when the user clicks on the close icon
      */
     fun onCloseActionImageClick(bubbleShowCase: BubbleShowCase)
+
+    fun setupDismissButton(text: String, background: Int, textSize: Float) {
+        // Configuration logic for the dismiss button
+    }
 
     /**
      * It is called when the user clicks on the background dim

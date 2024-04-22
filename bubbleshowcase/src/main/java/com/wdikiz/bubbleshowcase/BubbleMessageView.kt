@@ -1,4 +1,4 @@
-package com.elconfidencial.bubbleshowcase
+package com.wdikiz.bubbleshowcase
 
 import android.content.Context
 import android.graphics.Canvas
@@ -6,13 +6,16 @@ import android.graphics.Paint
 import android.graphics.Path
 import android.graphics.RectF
 import android.graphics.drawable.Drawable
-import android.support.constraint.ConstraintLayout
-import android.support.v4.content.ContextCompat
+
 import android.util.AttributeSet
 import android.util.TypedValue
 import android.view.View
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat
+import com.google.android.material.button.MaterialButton
 import java.lang.ref.WeakReference
 
 import java.util.ArrayList
@@ -26,7 +29,7 @@ class BubbleMessageView : ConstraintLayout {
     private val WIDTH_ARROW = 20
 
     private var itemView: View? = null
-
+    private var materialDismissButton: MaterialButton? = null
     private var imageViewIcon: ImageView? = null
     private var textViewTitle: TextView? = null
     private var textViewSubtitle: TextView? = null
@@ -70,6 +73,12 @@ class BubbleMessageView : ConstraintLayout {
         textViewTitle = findViewById(R.id.textViewShowCaseTitle)
         textViewSubtitle = findViewById(R.id.textViewShowCaseText)
         showCaseMessageViewLayout = findViewById(R.id.showCaseMessageViewLayout)
+        materialDismissButton = findViewById(R.id.dismissMaterialButton)
+        materialDismissButton?.setOnClickListener {
+            // Code pour fermer la bulle de message
+            itemView?.visibility = View.GONE
+        }
+
     }
 
     private fun setAttributes(builder: Builder){
@@ -128,6 +137,8 @@ class BubbleMessageView : ConstraintLayout {
     //END REGION
 
     //REGION SHOW ITEM
+
+
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)

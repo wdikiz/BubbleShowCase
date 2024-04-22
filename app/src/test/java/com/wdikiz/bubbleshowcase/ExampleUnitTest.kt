@@ -1,4 +1,4 @@
-package com.elconfidencial.bubbleshowcase
+package com.wdikiz.bubbleshowcase
 
 import org.junit.Test
 
